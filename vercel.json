@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "env": {
+    "NEXTAUTH_URL": "https://${VERCEL_URL}",
+    "NEXTAUTH_SECRET": "${NEXTAUTH_SECRET}",
+    "XENDIT_SECRET_KEY": "${XENDIT_SECRET_KEY}"
+  },
+  "routes": [
+    {
+      "src": "/api/xendit-webhook",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "X-XENDIT-CALLBACK, Content-Type"
+      }
+    }
+  ],
+  "regions": ["sin1"]
+}
