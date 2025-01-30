@@ -1,0 +1,39 @@
+{
+  "name": "usus-fire-crispy",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
+    "axios": "^1.6.2",
+    "bcryptjs": "^2.4.3",
+    "eslint": "8.53.0",
+    "eslint-config-next": "14.0.3",
+    "formik": "^2.4.5",
+    "jsonwebtoken": "^9.0.2",
+    "next": "14.0.3",
+    "next-auth": "^4.24.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-slick": "^0.30.3",
+    "slick-carousel": "^1.8.1",
+    "xendit-node": "6.1.0",
+    "yup": "^1.3.2",
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "autoprefixer": "^10.4.16",
+    "file-loader": "^6.2.0",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
+    "url-loader": "^4.1.1"
+  }
+}

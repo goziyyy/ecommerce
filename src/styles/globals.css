@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #ef4444;
+  --secondary: #3b82f6;
+  --background: #f3f4f6;
+}
+
+/* Slider customization */
+.slick-slider {
+  margin: 0 auto;
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+}
+
+.slick-prev {
+  left: 10px !important;
+}
+
+.slick-next {
+  right: 10px !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: var(--primary) !important;
+  font-size: 24px;
+}
+
+.slick-dots {
+  bottom: 5px !important;
+}
+
+.slick-dots li button:before {
+  color: var(--primary) !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: var(--primary) !important;
+}
+
+/* Product card */
+.product-card {
+  max-width: 24rem;
+  margin: 0 auto;
+}
+
+.product-image-container {
+  height: 16rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image-container img {
+  max-height: 100%;
+  width: auto;
+  margin: 0 auto;
+  object-fit: contain;
+  padding: 1rem;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid var(--primary);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Background colors */
+.bg-background {
+  background-color: var(--background);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.hover\:bg-red-600:hover {
+  background-color: #dc2626;
+}

@@ -1,0 +1,27 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Usus Original",
+      "description": "Usus crispy dengan rasa original yang gurih",
+      "price": 15000,
+      "category": "original",
+      "images": [
+        "usus2-removebg-preview.png",
+        "usus3-removebg-preview.png"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Usus Spicy",
+      "description": "Usus crispy dengan rasa pedas yang menggigit",
+      "price": 17000,
+      "category": "spicy",
+      "images": [
+        "usus1-removebg-preview.png",
+        "usus4-removebg-preview.png",
+        "usus5-removebg-preview.png"
+      ]
+    }
+  ]
+}

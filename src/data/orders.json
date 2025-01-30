@@ -1,0 +1,112 @@
+{
+  "orders": [
+    {
+      "id": "ORDER-1738247790858-6lrt94g42",
+      "userId": "1",
+      "items": [
+        {
+          "id": 2,
+          "name": "Usus Spicy",
+          "description": "Usus crispy dengan rasa pedas yang menggigit.",
+          "price": 17000,
+          "image": "/usus-spicy.jpg",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 17000,
+      "status": "PENDING",
+      "paymentId": "679b8e6f53d855b187081a01",
+      "createdAt": "2025-01-30T14:36:31.802Z",
+      "updatedAt": "2025-01-30T14:36:31.802Z"
+    },
+    {
+      "id": "ORDER-1738247943200-0h6p6jv7a",
+      "userId": "1",
+      "items": [
+        {
+          "id": 2,
+          "name": "Usus Spicy",
+          "description": "Usus crispy dengan rasa pedas yang menggigit.",
+          "price": 17000,
+          "image": "/usus-spicy.jpg",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 17000,
+      "status": "COMPLETED",
+      "paymentId": "679b8f075e9764b3a14f15df",
+      "invoiceUrl": "https://checkout-staging.xendit.co/web/679b8f075e9764b3a14f15df",
+      "expiryDate": "2025-01-31T14:39:03.627Z",
+      "createdAt": "2025-01-30T14:39:04.011Z",
+      "updatedAt": "2025-01-30T14:39:22.673Z",
+      "paymentDetails": {
+        "xenditId": "679b8f075e9764b3a14f15df",
+        "method": "EWALLET",
+        "channel": "DANA",
+        "amount": 17000,
+        "paidAt": "2025-01-30T14:39:17.952Z",
+        "currency": "IDR",
+        "merchantName": "Crafting",
+        "payerEmail": "jawir@gmail.com",
+        "description": "Order ORDER-1738247943200-0h6p6jv7a - Usus Fire Crispy",
+        "created": "2025-01-30T14:39:03.764Z",
+        "updated": "2025-01-30T14:39:21.307Z"
+      }
+    },
+    {
+      "id": "ORDER-1738248133467-lw2w7owdr",
+      "userId": "1",
+      "items": [
+        {
+          "id": 2,
+          "name": "Usus Spicy",
+          "description": "Usus crispy dengan rasa pedas yang menggigit.",
+          "price": 17000,
+          "image": "/usus-spicy.jpg",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 17000,
+      "status": "PENDING",
+      "paymentId": "679b8fc55e9764fee04f1731",
+      "invoiceUrl": "https://checkout-staging.xendit.co/web/679b8fc55e9764fee04f1731",
+      "expiryDate": "2025-01-31T14:42:13.631Z",
+      "createdAt": "2025-01-30T14:42:13.849Z",
+      "updatedAt": "2025-01-30T14:54:00.141Z",
+      "paymentDetails": {
+        "xenditId": "679b8fc55e9764fee04f1731",
+        "method": "EWALLET",
+        "channel": "DANA",
+        "amount": 17000,
+        "paidAt": "2025-01-30T14:42:56.973Z",
+        "currency": "IDR",
+        "merchantName": "Crafting",
+        "payerEmail": "jawir@gmail.com",
+        "description": "Order ORDER-1738248133467-lw2w7owdr - Usus Fire Crispy",
+        "created": "2025-01-30T14:42:13.719Z",
+        "updated": "2025-01-30T14:42:59.567Z"
+      }
+    },
+    {
+      "id": "ORDER-1738251736433-pso9wteqk",
+      "userId": "1",
+      "items": [
+        {
+          "id": "2",
+          "name": "Usus Spicy",
+          "description": "Usus crispy dengan rasa pedas yang menggigit",
+          "price": 17000,
+          "image": "/usus1-removebg-preview.png",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 17000,
+      "status": "PENDING",
+      "paymentId": "679b9dda53d85572a4083318",
+      "invoiceUrl": "https://checkout-staging.xendit.co/web/679b9dda53d85572a4083318",
+      "expiryDate": "2025-01-31T15:42:18.361Z",
+      "createdAt": "2025-01-30T15:42:18.769Z",
+      "updatedAt": "2025-01-30T15:42:18.769Z"
+    }
+  ]
+}

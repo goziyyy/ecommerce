@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Jawir",
+    "email": "Jawir@gmail.com",
+    "password": "$2a$10$JX1m.wPMlkzOM1381q47I.ZcrHFNbUD.EmQxQYYJMVltWLpQ4cGDC",
+    "createdAt": "2025-01-30T12:52:49.777Z",
+    "updatedAt": "2025-01-30T12:52:49.777Z"
+  },
+  {
+    "id": 2,
+    "name": "Admin",
+    "email": "admin@gozi.com",
+    "password": "$2y$10$wSbacWmsWgbsh9j2xOcLYe5Ci6AmlYtR6.3uOdTjjAiHf/yOtmPKi",
+    "role": "admin" 
+  }
+
+]
