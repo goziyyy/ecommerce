@@ -28,7 +28,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Nikmati sensasi pedas dan renyah dari Mulut Gozi, eh maksudnya usus crispy kami! 
+            Nikmati sensasi pedas dan renyah dari usus crispy kami! 
             Dibuat dengan resep rahasia dan bumbu pilihan.
           </p>
           

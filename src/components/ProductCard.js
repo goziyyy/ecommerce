@@ -41,7 +41,7 @@ const ProductCard = ({ id, name, description, price, images }) => {
   };
 
   return (
-    <div className="max-w-sm w-full bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
+    <div className="w-full bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
       <div className="relative h-64">
         <Slider {...settings}>
           {images.map((imageName, index) => (
@@ -51,7 +51,7 @@ const ProductCard = ({ id, name, description, price, images }) => {
                 <img
                   src={`/${imageName}`}
                   alt={`${name} view ${index + 1}`}
-                  className="max-h-full w-auto object-contain"
+                  className="max-h-full w-auto object-contain mx-auto"
                   style={{ maxWidth: '100%' }}
                 />
               </div>
@@ -59,16 +59,16 @@ const ProductCard = ({ id, name, description, price, images }) => {
           ))}
         </Slider>
       </div>
-      <div className="p-5">
+      <div className="p-5 text-center">
         <h3 className="text-xl font-semibold text-gray-800 mb-2">{name}</h3>
         <p className="text-gray-600 mb-4">{description}</p>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-center space-y-3">
           <span className="text-xl font-bold text-primary">
             Rp {price.toLocaleString()}
           </span>
           <button
             onClick={handleAddToCart}
-            className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300"
+            className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-red-600 transition duration-300 w-full max-w-[200px]"
           >
             Add to Cart
           </button>

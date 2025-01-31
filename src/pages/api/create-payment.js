@@ -4,35 +4,12 @@ import { authOptions } from './auth/[...nextauth]';
 import fs from 'fs/promises';
 import path from 'path';
 
-// Initialize Xendit client
 const xenditClient = new Xendit({
   secretKey: process.env.XENDIT_SECRET_KEY,
 });
 
-// Get Invoice service
 const { Invoice } = xenditClient;
-
 const ordersFilePath = path.join(process.cwd(), 'src/data/orders.json');
-const ordersDir = path.dirname(ordersFilePath);
-
-// Ensure orders directory and file exist
-const initOrdersFile = async () => {
-  try {
-    // Create directory if it doesn't exist
-    await fs.mkdir(ordersDir, { recursive: true });
-    
-    try {
-      // Try to read the file
-      await fs.access(ordersFilePath);
-    } catch {
-      // Create file if it doesn't exist
-      await fs.writeFile(ordersFilePath, JSON.stringify({ orders: [] }, null, 2));
-    }
-  } catch (error) {
-    console.error('Error initializing orders file:', error);
-    throw error;
-  }
-};
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -40,95 +17,81 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Get session using getServerSession
     const session = await getServerSession(req, res, authOptions);
-    
     if (!session) {
       return res.status(401).json({ message: 'Unauthorized' });
     }
 
-    const { items, totalAmount, userId } = req.body;
+    const { items, totalAmount } = req.body;
+    const orderId = `ORDER-${Date.now()}-${Math.random().toString(36).substr(2, 8)}`;
 
-    if (!items || !totalAmount || !userId) {
-      return res.status(400).json({ message: 'Missing required fields' });
-    }
+    // Use NEXT_PUBLIC_BASE_URL if set, otherwise fallback to request headers
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || (() => {
+      const protocol = req.headers['x-forwarded-proto'] || 'http';
+      const host = req.headers['x-forwarded-host'] || req.headers.host;
+      return `${protocol}://${host}`;
+    })();
 
-    // Validate userId matches session user
-    if (userId !== session.user.id) {
-      return res.status(403).json({ message: 'User ID mismatch' });
-    }
-
-    // Create unique order ID
-    const orderId = `ORDER-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-
-    // Get the base URL from request headers or environment
-    const baseUrl = process.env.NEXTAUTH_URL || `https://${req.headers.host}`;
-
-    // Create invoice data according to documentation
+    // Create invoice data
     const data = {
       amount: totalAmount,
-      invoiceDuration: 86400, // 24 hours
+      invoiceDuration: 86400,
       externalId: orderId,
-      description: `Order ${orderId} - Usus Fire Crispy`,
-      currency: 'IDR',
+      description: "Order payment",
+      currency: "IDR",
       reminderTime: 1,
-      payerEmail: session.user.email,
-      successRedirectUrl: `${baseUrl}/order-success?orderId=${orderId}`,
-      failureRedirectUrl: `${baseUrl}/order-failed?orderId=${orderId}`,
+      customer: {
+        email: session.user.email,
+        givenNames: session.user.name
+      },
+      successRedirectUrl: `https://a746-114-10-79-54.ngrok-free.app/order-success?orderId=${orderId}`,
+      failureRedirectUrl: `https://a746-114-10-79-54.ngrok-free.app/order-failed?orderId=${orderId}`,
+      paymentMethods: ["BCA", "BNI", "BRI", "MANDIRI", "PERMATA", "BSI", "OVO", "DANA", "SHOPEEPAY", "QRIS"],
     };
 
-    console.log('Creating invoice with data:', data);
+    // Create invoice in Xendit
+    const invoice = await Invoice.createInvoice({ data });
 
-    // Create invoice with Xendit using the documented format
-    const invoice = await Invoice.createInvoice({
-      data,
-    });
+    // Read existing orders
+    let ordersData = { orders: [] };
+    try {
+      const ordersContent = await fs.readFile(ordersFilePath, 'utf-8');
+      ordersData = JSON.parse(ordersContent);
+    } catch (error) {
+      console.log('No existing orders file, creating new one');
+    }
 
-    console.log('Invoice created:', invoice);
-
-    // Initialize orders file
-    await initOrdersFile();
-
-    // Read and update orders
-    const ordersData = JSON.parse(await fs.readFile(ordersFilePath, 'utf-8'));
-    
-    ordersData.orders.push({
+    // Add new order
+    const newOrder = {
       id: orderId,
-      userId,
+      userId: session.user.id,
       items,
       totalAmount,
       status: 'PENDING',
-      paymentId: invoice.id,
-      invoiceUrl: invoice.invoiceUrl, // Changed from invoice_url to invoiceUrl
-      expiryDate: invoice.expiryDate, // Changed from expiry_date to expiryDate
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
-    });
+      paymentDetails: {
+        invoiceId: invoice.id,
+        invoiceUrl: invoice.invoiceUrl,
+      }
+    };
 
+    ordersData.orders.push(newOrder);
+
+    // Save updated orders
     await fs.writeFile(ordersFilePath, JSON.stringify(ordersData, null, 2));
 
-    // Return success response with correct property names
+    // Return success response
     return res.status(200).json({
-      message: 'Payment initiated successfully',
-      invoiceUrl: invoice.invoiceUrl, // Changed from invoice_url to invoiceUrl
+      message: 'Order created successfully',
       orderId,
-      expiryDate: invoice.expiryDate // Changed from expiry_date to expiryDate
+      invoiceUrl: invoice.invoiceUrl
     });
 
   } catch (error) {
-    console.error('Payment creation error:', error);
-    
-    // Handle specific Xendit errors
-    if (error.status) {
-      return res.status(error.status).json({
-        message: error.message || 'Payment creation failed',
-        code: error.code,
-        error: error.errors
-      });
-    }
-
+    console.error('Error creating payment:', error);
     return res.status(500).json({
-      message: 'Internal server error during payment creation',
+      message: 'Error creating payment',
       error: error.message
     });
   }

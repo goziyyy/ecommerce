@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Jawir",
     "email": "Jawir@gmail.com",
-    "password": "$2a$10$JX1m.wPMlkzOM1381q47I.ZcrHFNbUD.EmQxQYYJMVltWLpQ4cGDC",
+    "password": "$2y$10$HtW7ElKYeEhFIOHmUkpE.OyLpgwsoTWd8ouNyiuJADMg3OQQ0psC6",
     "createdAt": "2025-01-30T12:52:49.777Z",
     "updatedAt": "2025-01-30T12:52:49.777Z"
   },
@@ -11,8 +11,15 @@
     "id": 2,
     "name": "Admin",
     "email": "admin@gozi.com",
-    "password": "$2y$10$wSbacWmsWgbsh9j2xOcLYe5Ci6AmlYtR6.3uOdTjjAiHf/yOtmPKi",
-    "role": "admin" 
+    "password": "$2y$10$HtW7ElKYeEhFIOHmUkpE.OyLpgwsoTWd8ouNyiuJADMg3OQQ0psC6",
+    "role": "admin"
+  },
+  {
+    "id": 3,
+    "name": "FRIESKA JULI AFTAMI RUSLI",
+    "email": "frieskajuliaftainir@gmail.com",
+    "password": "$2a$10$IG2WVXKopvE0bPJxWgpBAOzrli5lFWoSMS1pyefD/eSM8Di0zKiiK",
+    "createdAt": "2025-01-30T16:40:20.544Z",
+    "updatedAt": "2025-01-30T16:40:20.544Z"
   }
-
 ]

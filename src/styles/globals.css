@@ -11,6 +11,18 @@
 /* Slider customization */
 .slick-slider {
   margin: 0 auto;
+  text-align: center;
+}
+
+.slick-track {
+  display: flex !important;
+  align-items: center;
+}
+
+.slick-slide {
+  float: none;
+  display: inline-block !important;
+  vertical-align: middle;
 }
 
 .slick-prev,
@@ -56,6 +68,9 @@
   height: 16rem;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-image-container img {
@@ -74,6 +89,7 @@
   width: 24px;
   height: 24px;
   animation: spin 1s linear infinite;
+  margin: 0 auto;
 }
 
 @keyframes spin {
@@ -96,4 +112,13 @@
 
 .hover\:bg-red-600:hover {
   background-color: #dc2626;
+}
+
+/* Center content */
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }

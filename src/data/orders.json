@@ -107,6 +107,178 @@
       "expiryDate": "2025-01-31T15:42:18.361Z",
       "createdAt": "2025-01-30T15:42:18.769Z",
       "updatedAt": "2025-01-30T15:42:18.769Z"
+    },
+    {
+      "id": "ORDER-1738255133334-6df21rug5",
+      "userId": "2",
+      "items": [
+        {
+          "id": "1",
+          "name": "Usus Original",
+          "description": "Usus crispy dengan rasa original yang gurih",
+          "price": 15000,
+          "image": "/usus2-removebg-preview.png",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 15000,
+      "status": "PENDING",
+      "paymentId": "679bab1d5e97642ee84f43e7",
+      "invoiceUrl": "https://checkout-staging.xendit.co/web/679bab1d5e97642ee84f43e7",
+      "expiryDate": "2025-01-31T16:38:53.915Z",
+      "createdAt": "2025-01-30T16:38:54.204Z",
+      "updatedAt": "2025-01-30T16:38:54.204Z"
+    },
+    {
+      "id": "ORDER-1738255248437-y0dx97hvp",
+      "userId": "3",
+      "items": [
+        {
+          "id": "1",
+          "name": "Usus Original",
+          "description": "Usus crispy dengan rasa original yang gurih",
+          "price": 15000,
+          "image": "/usus2-removebg-preview.png",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 15000,
+      "status": "PENDING",
+      "paymentId": "679bab9053d855d0e50848f5",
+      "invoiceUrl": "https://checkout-staging.xendit.co/web/679bab9053d855d0e50848f5",
+      "expiryDate": "2025-01-31T16:40:48.986Z",
+      "createdAt": "2025-01-30T16:40:49.246Z",
+      "updatedAt": "2025-01-30T16:40:49.246Z"
+    },
+    {
+      "id": "ORDER-1738255296345-c94t3axno",
+      "userId": "3",
+      "items": [
+        {
+          "id": "2",
+          "name": "Usus Spicy",
+          "description": "Usus crispy dengan rasa pedas yang menggigit",
+          "price": 17000,
+          "image": "/usus1-removebg-preview.png",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 17000,
+      "status": "PENDING",
+      "paymentId": "679babc053d8556e6b084958",
+      "invoiceUrl": "https://checkout-staging.xendit.co/web/679babc053d8556e6b084958",
+      "expiryDate": "2025-01-31T16:41:36.778Z",
+      "createdAt": "2025-01-30T16:41:37.047Z",
+      "updatedAt": "2025-01-30T16:41:37.047Z"
+    },
+    {
+      "id": "ORDER-1738285266458-w2e5hwdjm",
+      "userId": "1",
+      "items": [
+        {
+          "id": "1",
+          "name": "Usus Original",
+          "description": "Usus crispy dengan rasa original yang gurih",
+          "price": 15000,
+          "image": "/usus2-removebg-preview.png",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 15000,
+      "status": "PENDING",
+      "paymentId": "679c20d35e976417db5008fe",
+      "invoiceUrl": "https://checkout-staging.xendit.co/web/679c20d35e976417db5008fe",
+      "expiryDate": "2025-02-01T01:01:07.843Z",
+      "createdAt": "2025-01-31T01:01:07.356Z",
+      "updatedAt": "2025-01-31T01:01:07.356Z"
+    },
+    {
+      "id": "ORDER-1738285644697-ljmavabd",
+      "userId": "1",
+      "items": [
+        {
+          "id": "1",
+          "name": "Usus Original",
+          "description": "Usus crispy dengan rasa original yang gurih",
+          "price": 15000,
+          "image": "/usus2-removebg-preview.png",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 15000,
+      "status": "PENDING",
+      "createdAt": "2025-01-31T01:07:25.196Z",
+      "updatedAt": "2025-01-31T01:07:25.196Z",
+      "paymentDetails": {
+        "invoiceId": "679c224d5e9764659e500b8c",
+        "invoiceUrl": "https://checkout-staging.xendit.co/web/679c224d5e9764659e500b8c"
+      }
+    },
+    {
+      "id": "ORDER-1738285888576-l79xlkll",
+      "userId": "1",
+      "items": [
+        {
+          "id": "2",
+          "name": "Usus Spicy",
+          "description": "Usus crispy dengan rasa pedas yang menggigit",
+          "price": 17000,
+          "image": "/usus1-removebg-preview.png",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 17000,
+      "status": "PENDING",
+      "createdAt": "2025-01-31T01:11:29.098Z",
+      "updatedAt": "2025-01-31T01:11:29.098Z",
+      "paymentDetails": {
+        "invoiceId": "679c234153d855b5d90909c8",
+        "invoiceUrl": "https://checkout-staging.xendit.co/web/679c234153d855b5d90909c8"
+      }
+    },
+    {
+      "id": "ORDER-1738288315116-ic33kjat",
+      "userId": "2",
+      "items": [
+        {
+          "id": "1",
+          "name": "Usus Original",
+          "description": "Usus crispy dengan rasa original yang gurih",
+          "price": 15000,
+          "image": "/usus2-removebg-preview.png",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 15000,
+      "status": "PENDING",
+      "createdAt": "2025-01-31T01:51:55.922Z",
+      "updatedAt": "2025-01-31T01:51:55.922Z",
+      "paymentDetails": {
+        "invoiceId": "679c2cbb5e97644f4b501d85",
+        "invoiceUrl": "https://checkout-staging.xendit.co/web/679c2cbb5e97644f4b501d85"
+      }
+    },
+    {
+      "id": "ORDER-1738336893995-me6c7ouq",
+      "userId": "1",
+      "items": [
+        {
+          "id": "2",
+          "name": "Usus Spicy",
+          "description": "Usus crispy dengan rasa pedas yang menggigit",
+          "price": 17000,
+          "image": "/usus1-removebg-preview.png",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 17000,
+      "status": "PENDING",
+      "createdAt": "2025-01-31T15:21:34.687Z",
+      "updatedAt": "2025-01-31T15:21:34.687Z",
+      "paymentDetails": {
+        "invoiceId": "679cea7f53d8553a090a6b2b",
+        "invoiceUrl": "https://checkout-staging.xendit.co/web/679cea7f53d8553a090a6b2b"
+      }
     }
   ]
 }

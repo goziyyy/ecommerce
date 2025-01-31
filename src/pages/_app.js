@@ -19,8 +19,10 @@ export default function App({ Component, pageProps }) {
   const pagesWithNavbar = [
     '/cart', 
     '/orders', 
-    '/admin/orders',  // Add admin routes
-    '/admin'          // Add admin base route
+    '/admin/orders',
+    '/admin',
+    '/order-success',
+    '/order-failed'
   ];
   
   // Check if current path starts with any of the paths in pagesWithNavbar
